@@ -1,0 +1,69 @@
+=== RUN   TestBasic3A
+Test: one client (3A) ...
+  ... Passed --  15.2  5  4991  786
+--- PASS: TestBasic3A (15.17s)
+=== RUN   TestSpeed3A
+Test: ops complete fast enough (3A) ...
+  ... Passed --  17.2  3  3833    0
+--- PASS: TestSpeed3A (17.17s)
+=== RUN   TestConcurrent3A
+Test: many clients (3A) ...
+  ... Passed --  16.0  5  6262  908
+--- PASS: TestConcurrent3A (16.02s)
+=== RUN   TestUnreliable3A
+Test: unreliable net, many clients (3A) ...
+  ... Passed --  16.2  5  6958  764
+--- PASS: TestUnreliable3A (16.25s)
+=== RUN   TestUnreliableOneKey3A
+Test: concurrent append to same key, unreliable (3A) ...
+  ... Passed --   0.9  3   279   52
+--- PASS: TestUnreliableOneKey3A (0.88s)
+=== RUN   TestOnePartition3A
+Test: progress in majority (3A) ...
+  ... Passed --   0.3  5    46    2
+Test: no progress in minority (3A) ...
+  ... Passed --   1.0  5   872    3
+Test: completion after heal (3A) ...
+  ... Passed --   1.0  5    66    3
+--- PASS: TestOnePartition3A (2.66s)
+=== RUN   TestManyPartitionsOneClient3A
+Test: partitions, one client (3A) ...
+  ... Passed --  22.8  5 19884  689
+--- PASS: TestManyPartitionsOneClient3A (22.76s)
+=== RUN   TestManyPartitionsManyClients3A
+Test: partitions, many clients (3A) ...
+  ... Passed --  23.1  5 29338  934
+--- PASS: TestManyPartitionsManyClients3A (23.09s)
+=== RUN   TestPersistOneClient3A
+Test: restarts, one client (3A) ...
+  ... Passed --  19.2  5  6262  773
+--- PASS: TestPersistOneClient3A (19.16s)
+=== RUN   TestPersistConcurrent3A
+Test: restarts, many clients (3A) ...
+--- FAIL: TestPersistConcurrent3A (21.36s)
+    test_test.go:287: get wrong value, key 2, wanted:
+        x 2 0 yx 2 1 yx 2 2 yx 2 3 yx 2 4 yx 2 5 yx 2 6 yx 2 7 yx 2 8 yx 2 9 yx 2 10 yx 2 11 yx 2 12 yx 2 13 yx 2 14 yx 2 15 yx 2 16 yx 2 17 yx 2 18 yx 2 19 yx 2 20 yx 2 21 y
+        , got
+        x 2 1 yx 2 2 yx 2 5 yx 2 6 yx 2 7 yx 2 9 yx 2 11 yx 2 12 yx 2 13 yx 2 14 yx 2 16 yx 2 18 yx 2 20 yx 2 21 y
+    test_test.go:287: get wrong value, key 3, wanted:
+        x 3 0 yx 3 1 yx 3 2 yx 3 3 yx 3 4 yx 3 5 yx 3 6 yx 3 7 yx 3 8 yx 3 9 yx 3 10 yx 3 11 yx 3 12 yx 3 13 yx 3 14 yx 3 15 yx 3 16 yx 3 17 yx 3 18 yx 3 19 yx 3 20 yx 3 21 yx 3 22 yx 3 23 y
+        , got
+        x 3 0 yx 3 1 yx 3 2 yx 3 3 yx 3 4 yx 3 6 yx 3 7 yx 3 8 yx 3 9 yx 3 10 yx 3 12 yx 3 13 yx 3 14 yx 3 16 yx 3 17 yx 3 18 yx 3 19 yx 3 20 yx 3 21 y
+    test_test.go:138: 0 missing element x 0 0 y in Append result x 0 1 yx 0 2 yx 0 7 yx 0 8 yx 0 9 yx 0 10 yx 0 11 yx 0 12 yx 0 13 yx 0 15 yx 0 16 yx 0 17 yx 0 18 yx 0 20 y
+=== RUN   TestPersistConcurrentUnreliable3A
+Test: unreliable net, restarts, many clients (3A) ...
+  ... Passed --  20.2  5  8042  807
+--- PASS: TestPersistConcurrentUnreliable3A (20.23s)
+=== RUN   TestPersistPartition3A
+Test: restarts, partitions, many clients (3A) ...
+  ... Passed --  26.9  5 20922 1003
+--- PASS: TestPersistPartition3A (26.94s)
+=== RUN   TestPersistPartitionUnreliable3A
+Test: unreliable net, restarts, partitions, many clients (3A) ...
+  ... Passed --  27.1  5 19602  558
+--- PASS: TestPersistPartitionUnreliable3A (27.11s)
+=== RUN   TestPersistPartitionUnreliableLinearizable3A
+Test: unreliable net, restarts, partitions, random keys, many clients (3A) ...
+  ... Passed --  30.0  7 23493  794
+--- PASS: TestPersistPartitionUnreliableLinearizable3A (30.00s)
+FAIL
